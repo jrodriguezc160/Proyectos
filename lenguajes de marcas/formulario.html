@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>FORMULARIO</title>
+
+    <link rel="stylesheet" href="estilos/styles.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            font-size: small;
+            line-height: 1.6;
+        }
+
+
+        .div-container {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-bottom: 5vh;
+        }
+
+        .azimut-div {
+            bottom: 20px;
+            font-family: "rotulo";
+            font-weight: 900;
+            font-size: 10vh;
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-bottom: 2%;
+            transform: translateY(30%);
+        }
+
+        .gradient {
+            margin-right: 2%;
+            margin-bottom: 2%;
+            flex: 1;
+            height: 16vh;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        button {
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, rgb(35, 166, 213), #23d5ab);
+            border: 0px solid blue;
+            border-radius: 20px;
+            transition: box-shadow 0.5s ease;
+        }
+
+        button:hover {
+            box-shadow: 0px 0px 15px 5px rgba(35, 166, 213, 0.5);
+        }
+
+    </style>
+
+</head>
+
+<body>
+        <div class="azimut-div">
+            CONTACTANOS
+        </div>
+
+        <div class="formulario" style="justify-content: center;">
+            <form target="_blank">
+                <div style="border-radius: 10px; padding: 20px; display: flex;">
+                    <div class="columna" style="flex: 1; border: 1px solid #ccc; margin-right: 10px; padding: 10px;">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" value="Ingresa tu nombre" required style="margin-bottom: 10px; border-radius: 5px;">
+                        
+                        <br><br>
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="xxxxx@xxxxx.xxx" required style="margin-bottom: 10px; border-radius: 5px;">
+                        
+                        <br><br>
+                        
+                        <label for="tel">Teléfono:</label>
+                        <input type="tel" id="tel" name="tel" size="11" placeholder="999 999 999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" maxlength="11" style="margin-bottom: 10px; border-radius: 5px;">
+                        
+                        <br><br>
+                        
+                        <label for="interes">Aventura:</label>
+                        <input type="radio" id="interes" name="interes" value="aventura">
+                        <br>
+                        <label for="interes-playa">Playa:</label>
+                        <input type="radio" id="interes-playa" name="interes" value="playa">
+                    </div>
+                
+                    <div class="columna" style="flex: 1; border: 1px solid #ccc; margin-right: 10px; padding: 10px;">
+                        <label for="ciudad">Ciudad:</label>
+                        <input type="text" id="ciudad" name="ciudad" placeholder="Ingresa tu ciudad" value="Madrid" required style="margin-bottom: 10px; border-radius: 5px;">
+                        
+                        <br><br>
+                        
+                        <label for="pais">País:</label>
+                        <select id="pais" name="pais" required style="margin-bottom: 10px; border-radius: 5px;">
+                            <option value="">Selecciona tu país</option>
+                            <option value="espana">España</option>
+                            <option value="mexico">México</option>
+                            <option value="argentina">Argentina</option>
+                        </select>
+                        
+                        <br><br>
+                        
+                        <label for="asunto">Asunto:</label>
+                        <input type="text" id="asunto" name="asunto" placeholder="Ingresa el asunto" required style="margin-bottom: 10px; border-radius: 5px;">
+                        
+                        <br><br>
+                        
+                        <label for="edad">Edad:</label>
+                        <input type="number" id="edad" name="edad" placeholder="Ingresa tu edad" value="18" min="0" max="120" style="margin-bottom: 10px; border-radius: 5px;">
+                    </div>
+                
+                    <div class="columna" style="flex: 1; border: 1px solid #ccc; padding: 10px;">
+                        <label for="mensaje">Mensaje:</label><br>
+                        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje" rows="4" value="mensaje" required style="margin-bottom: 10px; border-radius: 5px;"></textarea>
+                        
+                        <br><br>
+                        
+                        <label for="preferencia">Preferencia:</label>
+                        <select id="preferencia" name="preferencia" style="margin-bottom: 10px; border-radius: 5px;">
+                            <option value="">Selecciona tu preferencia</option>
+                            <option value="hotel">Hotel</option>
+                            <option value="apartamento">Apartamento</option>
+                            <option value="hostal">Hostal</option>
+                        </select>
+                        
+                        <br><br>
+                        
+                        <label for="adjuntar">Adjuntar archivo:</label>
+                        <input type="file" id="adjuntar" name="adjuntar" style="margin-bottom: 10px; border-radius: 5px;">
+                    </div>
+                </div>
+                <button type="submit" id="enviar" name="enviar" value="Enviar" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 10px; margin-left: 20px; width: 200px;">Enviar</button>
+            </form>
+        </div>
+</body>
+
+</html>

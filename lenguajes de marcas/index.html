@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Página de inicio</title>
+
+    <link rel="stylesheet" href="estilos/styles.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            font-size: small;
+            line-height: 1.6;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            scroll-snap-align: start;
+        }
+
+        .div-container {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-bottom: 5vh;
+        }
+
+        .azimut-div {
+            bottom: 20px;
+            font-family: "rotulo";
+            font-weight: 900;
+            font-size: 18vh;
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-bottom: 2%;
+            transform: translateY(30%);
+        }
+
+        .gradient {
+            margin-right: 2%;
+            margin-bottom: 2%;
+            flex: 1;
+            height: 16vh;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        #inicio {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            height: 100vh;
+        }
+
+        #lugares {
+            /* background-color: #d9d9d9; */
+        }
+
+        #quienes-somos {
+            /* background-color: #c6c6c6; */
+        }
+
+        #contacto {
+            /* background-color: #b3b3b3; */
+        }
+
+        .titulo-seccion {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .texto-con-gradiente {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        button {
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, rgb(35, 166, 213), #23d5ab);
+            border: 0px solid blue;
+            border-radius: 20px;
+            transition: box-shadow 0.5s ease;
+        }
+
+        button:hover {
+            box-shadow: 0px 0px 15px 5px rgba(35, 166, 213, 0.5);
+        }
+
+
+        .subtitulo-seccion {
+            font-size: medium;
+            margin-bottom: 2rem;
+        }
+
+        .descripcion-lugar {
+            font-size: medium;
+
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        h3 {
+            font-family: "rotulo";
+            font-weight: 900;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navBar">
+    <ul class="navBar">
+        <li><a href="index.html">inicio</a></li>
+        <li><a href="lugares.html">lugares</a></li>
+        <li><a href="index.html#quienes-somos">quiénes somos</a></li>
+        <li><a href="contacto.html">contacto</a></li>
+    </ul>
+    </div>
+
+    <section id="inicio">
+        <div class="div-container">
+            <div class="azimut-div">
+                AZIMUT
+            </div>
+            <div class="gradient"></div>
+        </div>
+    </section>
+
+    <script>
+        // Función para mostrar una imagen de cada uno de los lugares
+        function cambiarImagen(imagenURL) {
+            var seccion = document.getElementById('lugares');
+            seccion.style.transition = 'background-image 0.5s ease';
+            seccion.style.backgroundImage = imagenURL;
+            seccion.style.backgroundSize = 'cover';
+            seccion.style.backgroundRepeat = 'no-repeat';
+            seccion.style.backgroundPosition = 'center';
+
+
+            var elementosTexto = document.querySelectorAll('.descripcion-lugar, .titulo-seccion, p, h1, h2, h3');
+            for (var i = 0; i < elementosTexto.length; i++) {
+                elementosTexto[i].style.color = 'white';
+                elementosTexto[i].style.transition = 'color 0.5s ease';
+            }
+        }
+
+        function restaurarImagen() {
+            var seccion = document.getElementById('lugares');
+            seccion.style.transition = 'background-image 0.5s ease';
+            seccion.style.backgroundImage = 'none';
+
+            var elementosTexto = document.querySelectorAll('.descripcion-lugar, .titulo-seccion, p, h1, h2, h3');
+            for (var i = 0; i < elementosTexto.length; i++) {
+                elementosTexto[i].style.color = '';
+                elementosTexto[i].style.transition = 'color 0.5s ease';
+            }
+        }
+    </script>
+
+    <section id="lugares">
+        <h2 class="titulo-seccion">Descubre nuestros lugares destacados</h2>
+        <div class="descripcion-lugar">
+            <a href="granada.html" onmouseover="cambiarImagen('url(imagenes/granadaAlhambra.jpg)')"
+                onmouseout="restaurarImagen()">
+                <h3>GRANADA</h3>
+            </a>
+            <p>
+                Explora la encantadora ciudad de Granada. Sumérgete en su rica historia, maravíllate con la
+                majestuosidad de la Alhambra y disfruta de su vibrante ambiente.</p>
+        </div>
+        <br>
+        <div class="descripcion-lugar">
+            <a href="lanzarote.html"
+                onmouseover="cambiarImagen('url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/b1ba1f160800181.63bb03ef5cb1d.jpg)')"
+                onmouseout="restaurarImagen()">
+                <h3>LANZAROTE</h3>
+            </a>
+            <p>Disfruta de las hermosas playas volcánicas y los paisajes únicos de Lanzarote. Un lugar perfecto para los
+                amantes del sol y el mar.</p>
+        </div>
+        <br>
+        <div class="descripcion-lugar">
+            <a href="cabodegata.html"
+                onmouseover="cambiarImagen('url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/832c92113370393.602644172696c.jpg)')"
+                onmouseout="restaurarImagen()">
+                <h3>CABO DE GATA</h3>
+            </a>
+            <p>Sumérgete en la belleza natural del Parque Natural de Cabo de Gata en Almería. Sus impresionantes playas
+                y calas te dejarán sin aliento.</p>
+        </div>
+    </section>
+
+    <section id="quienes-somos">
+        <div class="texto-con-gradiente">Quiénes somos</div>
+        <br>
+        <p class="descripcion-lugar">El azimut es una medida angular que representa el ángulo horizontal entre
+            la dirección norte y la dirección hacia un objeto o punto de interés.</p>
+        <br>
+        <p class="descripcion-lugar">Azimut es nuestro emocionante blog de viajes dentro de España. Compartimos relatos
+            auténticos e itinerarios emocionantes para descubrir la diversidad de nuestro país. Somos una guía confiable
+            para aventureros que buscan tesoros ocultos. ¡Únete a nosotros!</p>
+        <br><br>
+        <button type="button"><a href="contacto.html" style="color: white;">¡Únete a nosotros!</a></button>
+    </section>
+
+
+</body>
+
+</html>

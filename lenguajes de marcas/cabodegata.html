@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Prueba local</title>
+    <link rel="stylesheet" href="estilos/styles.css">
+
+    <style>
+        body {
+            font-size: small;
+        }
+
+        section {
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            scroll-snap-align: start;
+        }
+
+        #inicio {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            height: 100vh;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        button {
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, rgb(35, 166, 213), #23d5ab);
+            border: 0px solid blue;
+            border-radius: 20px;
+            transition: box-shadow 0.5s ease;
+        }
+
+        button:hover {
+            box-shadow: 0px 0px 15px 5px rgba(35, 166, 213, 0.5);
+        }
+
+
+        .subtitulo-seccion {
+            font-size: medium;
+            margin-bottom: 2rem;
+        }
+
+        .descripcion-lugar {
+            font-size: medium;
+
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .titulo1 {
+            font-family: "rotulo";
+            font-size: 18vh;
+            font-weight: 500;
+        }
+
+        .desc {
+            color: rgb(199, 199, 199);
+            font-size: 70%;
+            font-weight: 50;
+        }
+
+        .desc img {
+            padding-left: 10px;
+        }
+
+        .lista1 {
+            bottom: 0;
+            position: absolute;
+            margin: 0;
+            padding: 20px 30px;
+            align-items: baseline;
+            font-size: 50px;
+        }
+
+        .lista1 p {
+            display: inline;
+            padding-right: 10px;
+        }
+
+        .lista1 img {
+            width: 50px;
+            height: 50px;
+            margin: 0;
+            padding-left: 0px;
+            object-fit: cover;
+            transition: width 0.2s ease-in-out;
+        }
+
+        .lista1 img:hover {
+            width: 100px;
+            height: 50px;
+            margin: 0;
+            padding-left: 0px;
+            object-fit: cover;
+            transition: width 0.2s ease-in-out;
+        }
+
+        table {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        td,
+        th {
+            border: 1px solid grey;
+            padding: 10px 20px;
+        }
+
+        .gradient {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        }
+
+        .gradient td,
+        th {
+            border: 1px solid whitesmoke;
+            color: whitesmoke;
+        }
+
+        .stars-column {
+            width: 100px;
+            text-align: center;
+        }
+
+        #clave1 {
+            position: relative;
+            width: 250px;
+            height: 450px;
+            margin: 50px;
+            padding: 25px;
+            text-align: center;
+            background-image: url(https://miguel-gil.es/wp-content/uploads/2022/07/web_noc0881-hdr-scaled.jpg);
+            background-size: cover;
+            background-position: center;
+            border: 1px solid lightgrey;
+            border-radius: 20px;
+            overflow: hidden;
+            /* Añade un overflow hidden para ocultar el pseudo-elemento en los bordes */
+        }
+
+        #clave1::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            z-index: 1;
+        }
+
+        #clave1 .texto {
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        #clave1 .imagen-pequena {
+            position: absolute;
+            bottom: 20px;
+            border-radius: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        #clave2 {
+            position: relative;
+            width: 250px;
+            height: 450px;
+            margin: 50px;
+            padding: 25px;
+            text-align: center;
+            background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/832c92113370393.602644172696c.jpg);
+            background-size: cover;
+            background-position: center;
+            border: 1px solid lightgrey;
+            border-radius: 20px;
+            overflow: hidden;
+            /* Añade un overflow hidden para ocultar el pseudo-elemento en los bordes */
+        }
+
+        #clave2::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            z-index: 0;
+        }
+
+        #clave2 .texto {
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        #clave2 .imagen-pequena {
+            position: absolute;
+            bottom: 20px;
+            border-radius: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        #clave3 {
+            position: relative;
+            width: 250px;
+            height: 450px;
+            margin: 50px;
+            padding: 25px;
+            text-align: center;
+            background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/1b83c0113370393.6026441726e27.jpg);
+            background-size: cover;
+            background-position: center;
+            border: 1px solid lightgrey;
+            border-radius: 20px;
+            overflow: hidden;
+            /* Añade un overflow hidden para ocultar el pseudo-elemento en los bordes */
+        }
+
+        #clave3::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            z-index: 0;
+        }
+
+        #clave3 .texto {
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        #clave3 .imagen-pequena {
+            position: absolute;
+            bottom: 20px;
+            border-radius: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var initialBackground = $('body').css("background");
+
+            $('a').hover(function () {
+                $(this).animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(58, 134, 233)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            }, function () {
+                $(this).animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(36, 36, 36)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            });
+
+            $("#imgGRA1").hover(function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background-image", "url(https://miguel-gil.es/wp-content/uploads/2022/07/web_noc0881-hdr-scaled.jpg)");
+                    $(this).animate({ opacity: 1 }, 100);
+                    $(this).css("height", "100vh");
+                    $(this).css("background-size", "cover");
+                });
+                $('a, .titulo1').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(238, 243, 243)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            }, function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background", initialBackground);
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a, .titulo1').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(36, 36, 36)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            });
+
+            $("#imgGRA2").hover(function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background-image", "url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/832c92113370393.602644172696c.jpg)");
+                    $(this).animate({ opacity: 1 }, 100);
+                    $(this).css("height", "100vh");
+                    $(this).css("background-size", "cover");
+                });
+                $('a, .titulo1').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(238, 243, 243)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            }, function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background", initialBackground);
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a, .titulo1').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(36, 36, 36)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            });
+
+            $("#imgGRA3").hover(function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background-image", "url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/1b83c0113370393.6026441726e27.jpg)");
+                    $(this).animate({ opacity: 1 }, 100);
+                    $(this).css("height", "100vh");
+                    $(this).css("background-size", "cover");
+                });
+                $('a, .titulo1').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(238, 243, 243)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            }, function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background", initialBackground);
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a, .titulo1').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(36, 36, 36)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            });
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <div class="navBar">
+    <ul class="navBar">
+        <li><a href="index.html">inicio</a></li>
+        <li><a href="lugares.html">lugares</a></li>
+        <li><a href="index.html#quienes-somos">quiénes somos</a></li>
+        <li><a href="contacto.html">contacto</a></li>
+    </ul>
+    </div>
+
+    <section id="inicio">
+        <div class=" div-container">
+            <div class="lista1">
+                <p class="titulo1">CABO DE GATA</p>
+                <div class="separador"></div>
+                <img src="https://miguel-gil.es/wp-content/uploads/2022/07/web_noc0881-hdr-scaled.jpg" alt="playa"
+                    id="imgGRA1">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/832c92113370393.602644172696c.jpg"
+                    alt="playa" id="imgGRA2">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/1b83c0113370393.6026441726e27.jpg"
+                    alt="playa" id="imgGRA3">
+            </div>
+        </div>
+    </section>
+
+    <section id="reseña">
+        <h2 class="titulo-seccion">RESEÑA</h2>
+        <div class="descripcion-lugar">
+            <p>Bienvenido a Cabo de Gata, un paraíso natural en la costa sur de España. Descubre sus playas vírgenes,
+                acantilados impresionantes y senderos serpenteantes. ¡Sumérgete en la aventura y déjate maravillar por
+                la belleza indómita de este rincón paradisíaco!</p>
+            <p>Cabo de Gata te espera con experiencias únicas. Explora la playa de Los Genoveses, maravíllate con el
+                faro de Cabo de Gata y adéntrate en la mágica cala de San Pedro. ¡Disfruta de la serenidad, la
+                naturaleza y la autenticidad de este lugar único en el Mediterráneo!</p>
+            <p>Cabo de Gata ofrece un refugio de belleza natural y descubrimientos fascinantes. Relájate en sus playas,
+                explora sus calas secretas y admira los atardeceres desde sus acantilados. ¡Embárcate en una aventura
+                inolvidable y sumérgete en la esencia pura de Cabo de Gata!</p>
+        </div>
+        <br>
+    </section>
+
+    <section id="quienes-somos">
+        <h2 class="titulo-seccion">TABLA</h2>
+        <br>
+        <table>
+            <tbody>
+                <tr class="gradient">
+                    <th>Características</th>
+                    <td class="stars-column">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2 L15.09 8.65 L22 9.27 L17 13.14 L18.18 20 L12 17.77 L5.82 20 L7 13.14 L2 9.27 L8.91 8.65 Z"
+                                stroke="whitesmoke" fill="none" />
+                        </svg>
+                    </td>
+                    <td class="stars-column">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2 L15.09 8.65 L22 9.27 L17 13.14 L18.18 20 L12 17.77 L5.82 20 L7 13.14 L2 9.27 L8.91 8.65 Z"
+                                stroke="whitesmoke" fill="none" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2 L15.09 8.65 L22 9.27 L17 13.14 L18.18 20 L12 17.77 L5.82 20 L7 13.14 L2 9.27 L8.91 8.65 Z"
+                                stroke="whitesmoke" fill="none" />
+                        </svg>
+                    </td>
+                    <td class="stars-column">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2 L15.09 8.65 L22 9.27 L17 13.14 L18.18 20 L12 17.77 L5.82 20 L7 13.14 L2 9.27 L8.91 8.65 Z"
+                                stroke="whitesmoke" fill="none" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2 L15.09 8.65 L22 9.27 L17 13.14 L18.18 20 L12 17.77 L5.82 20 L7 13.14 L2 9.27 L8.91 8.65 Z"
+                                stroke="whitesmoke" fill="none" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2 L15.09 8.65 L22 9.27 L17 13.14 L18.18 20 L12 17.77 L5.82 20 L7 13.14 L2 9.27 L8.91 8.65 Z"
+                                stroke="whitesmoke" fill="none" />
+                        </svg>
+                    </td>
+                    <th>Detalles</th>
+                </tr>
+                <tr>
+                    <td>Playa</td>
+                    <td></td>
+                    <td></td>
+                    <td bgcolor="lightgrey"></td>
+                    <td>Recomendamos la playa de Monsul, que ha sido escenario de varias películas, lo que le añade un
+                        toque especial</td>
+                </tr>
+                <tr>
+                    <td>Hoteles</td>
+                    <td></td>
+                    <td bgcolor="lightgrey"></td>
+                    <td></td>
+                    <td>Recomendamos el hotel "La gaviota" o el hostal "Horizonte" para los menos exquisitos</td>
+                </tr>
+                <tr>
+                    <td>Restauración</td>
+                    <td></td>
+                    <td></td>
+                    <td bgcolor="lightgrey"></td>
+                    <td>El restaurante "Mirador de Monsul", con sus vistas impresionantes, destaca por encima del resto
+                    </td>
+                </tr>
+                <tr>
+                    <td>Monumentos</td>
+                    <td bgcolor="lightgrey"></td>
+                    <td></td>
+                    <td></td>
+                    <td>Esta tierra destaca sobre todo por su naturaleza</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="lugares-clave">
+        <h2 class="titulo-seccion">LUGARES CLAVE</h2>
+        <div style="display: flex; justify-content: center;">
+            <div id="clave1">
+                <h2 class="texto">PLAYA DE LOS GENOVESES</h2>
+                <p class="texto">Esta amplia playa de arena dorada es un verdadero tesoro natural. Con aguas cristalinas
+                    y rodeada de dunas y montañas, la playa de los Genoveses es perfecta para relajarse, dar un paseo
+                    por la orilla o disfrutar de deportes acuáticos como el snorkel o el kayak..</p>
+                <img src="https://miguel-gil.es/wp-content/uploads/2022/07/web_noc0881-hdr-scaled.jpg" alt="playa"
+                    width="200px" height="200px" class="imagen-pequena">
+            </div>
+            <div id="clave2">
+                <h2 class="texto">FARO DE CABO DE GATA</h2>
+                <p class="texto">Ubicado en el punto más oriental de la península de Cabo de Gata, el Faro de Cabo de
+                    Gata ofrece unas vistas panorámicas impresionantes del paisaje circundante. Puedes subir a su torre
+                    para disfrutar de una vista de 360 grados del mar, las montañas y los acantilados.</p>
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/832c92113370393.602644172696c.jpg"
+                    alt="playa" width="200px" height="200px" class="imagen-pequena">
+            </div>
+            <div id="clave3">
+                <h2 class="texto">CALA DE SAN PEDRO</h2>
+                <p class="texto">Esta cala es un verdadero oasis escondido en Cabo de Gata. Solo se puede acceder a ella
+                    a pie o en barco, lo que la hace aún más especial. Rodeada de acantilados y con aguas cristalinas,
+                    la Cala de San Pedro ofrece una experiencia tranquila y serena.</p>
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/1b83c0113370393.6026441726e27.jpg"
+                    alt="playa" width="200px" height="200px" class="imagen-pequena">
+            </div>
+        </div>
+        <br>
+    </section>
+    <br><br><br><br><br><br>
+    <div style="display: flex; justify-content: center;">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/DV45kh0Grmg?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <br><br><br>
+</body>
+</html>

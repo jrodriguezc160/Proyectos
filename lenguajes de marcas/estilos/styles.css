@@ -1,0 +1,92 @@
+@font-face {
+    font-family: "rotulo";
+    src: url(fuentes/Ade-Display.otf);
+}
+
+@font-face {
+    font-family: "futura";
+    src: url(fuentes/futura\ light\ bt.ttf);
+}
+
+body {
+    background-color: rgb(238, 243, 243);
+    color: rgb(36, 36, 36);
+    font-family: Arial, sans-serif;
+    font-size: medium;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    transition: width 0.5s ease-in-out;
+}
+
+.titulo {
+    font-family: "rotulo";
+    font-size: 90%;
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(36, 36, 36);
+    transition: text-decoration 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+a:visited {
+    text-decoration: none;
+    color: rgb(36, 36, 36);
+    transition: text-decoration 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+a:hover {
+    text-decoration: line-through;
+    color: rgb(58, 134, 233);
+    transition: text-decoration 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+a:active {
+    text-decoration: line-through;
+    color: rgb(233, 58, 58);
+    transition: text-decoration 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.navBar {
+    top: 0;
+    left: 0;
+    padding-top: 5px;
+    list-style-type: none;
+    position: sticky;
+}
+
+.navBar li {
+    padding-right: 20px;
+    display: inline-block;
+}
+
+
+.lista1 {
+    bottom: 0;
+    position: absolute;
+    margin: 0;
+    align-items: baseline;
+    font-size: 50px;
+}
+
+.lista1 p {
+    display: inline;
+}
+
+.lista1 img {
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding-left: 0px;
+    object-fit: cover;
+    transition: width 0.2s ease-in-out;
+}
+
+.lista1 img:hover {
+    width: 100px;
+    height: 50px;
+    object-fit: cover;
+    transition: width 0.2s ease-in-out;
+}

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Prueba local</title>
+    <link rel="stylesheet" href="estilos/styles.css">
+
+    <style>
+        body {
+            font-size: small;
+        }
+
+        .desc {
+            color: rgb(199, 199, 199);
+            font-size: 70%;
+            font-weight: 50;
+        }
+
+        .desc img {
+            padding-left: 10px;
+        }
+
+        .lista1 {
+            bottom: 0;
+            position: absolute;
+            margin: 0;
+            padding: 20px 30px;
+            align-items: baseline;
+            font-size: 50px;
+        }
+
+        .lista1 p {
+            display: inline;
+            padding-right: 10px;
+        }
+
+        .lista1 img {
+            width: 50px;
+            height: 50px;
+            margin: 0;
+            padding-left: 0px;
+            object-fit: cover;
+            transition: width 0.2s ease-in-out;
+        }
+
+        .lista1 img:hover {
+            width: 100px;
+            height: 50px;
+            margin: 0;
+            padding-left: 0px;
+            object-fit: cover;
+            transition: width 0.2s ease-in-out;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var initialBackground = $('body').css("background");
+
+            $('a').hover(function () {
+                $(this).animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(58, 134, 233)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            }, function () {
+                $(this).animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(36, 36, 36)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            });
+
+            $("#imgGRA1").hover(function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background-image", "url(imagenes/granadaAlhambra.jpg)");
+                    $(this).animate({ opacity: 1 }, 100);
+                    $(this).css("background-size", "cover");
+                });
+                $('a:hover').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(238, 243, 243)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(238, 243, 243)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            }, function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background", initialBackground);
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(36, 36, 36)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a:hover').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(58, 134, 233)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            });
+
+            $("#imgGRA2").hover(function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background-image", "url(imagenes/granadaCallejon.jpg)");
+                    $(this).animate({ opacity: 1 }, 100);
+                    $(this).css("background-size", "cover");
+                });
+                $('a').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(238, 243, 243)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            }, function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background", initialBackground);
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(36, 36, 36)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a:hover').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", " rgb(58, 134, 233)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            });
+
+            $("#imgGRA3").hover(function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background-image", "url(imagenes/granadaVista.jpg)");
+                    $(this).animate({ opacity: 1 }, 100);
+                    $(this).css("background-size", "cover");
+                });
+                $('a').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(238, 243, 243)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            }, function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background", initialBackground);
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(36, 36, 36)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a:hover').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", " rgb(58, 134, 233)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            });
+
+            $("#imgCAB1").hover(function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background", "url(https://miguel-gil.es/wp-content/uploads/2022/07/web_noc0881-hdr-scaled.jpg)");
+                    $(this).animate({ opacity: 1 }, 100);
+                    $(this).css("background-size", "cover");
+                });
+                $('a').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(238, 243, 243)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            }, function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background", initialBackground);
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(36, 36, 36)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a:hover').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", " rgb(58, 134, 233)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            });
+
+            $("#imgCAB2").hover(function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background", "url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/832c92113370393.602644172696c.jpg)");
+                    $(this).animate({ opacity: 1 }, 100);
+                    $(this).css("background-size", "cover");
+                });
+                $('a').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(238, 243, 243)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            }, function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background", initialBackground);
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(36, 36, 36)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a:hover').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", " rgb(58, 134, 233)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            });
+
+            $("#imgCAB3").hover(function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background", "url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/1b83c0113370393.6026441726e27.jpg)");
+                    $(this).animate({ opacity: 1 }, 100);
+                    $(this).css("background-size", "cover");
+                });
+                $('a').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(238, 243, 243)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            }, function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background", initialBackground);
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(36, 36, 36)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a:hover').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", " rgb(58, 134, 233)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            });
+
+            $("#imgLAN1").hover(function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background", "url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/b1ba1f160800181.63bb03ef5cb1d.jpg)");
+                    $(this).animate({ opacity: 1 }, 100);
+                    $(this).css("background-size", "cover");
+                });
+                $('a').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(238, 243, 243)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            }, function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background", initialBackground);
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(36, 36, 36)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a:hover').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", " rgb(58, 134, 233)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            });
+
+            $("#imgLAN2").hover(function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background", "url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/907263160800181.63bb03ef5e4eb.jpg)");
+                    $(this).animate({ opacity: 1 }, 100);
+                    $(this).css("background-size", "cover");
+                });
+                $('a').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(238, 243, 243)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            }, function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background", initialBackground);
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(36, 36, 36)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a:hover').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", " rgb(58, 134, 233)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            });
+
+            $("#imgLAN3").hover(function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background", "url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/a9d775160803599.63bb102a27fdd.jpg)");
+                    $(this).animate({ opacity: 1 }, 100);
+                    $(this).css("background-size", "cover");
+                });
+                $('a').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(238, 243, 243)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            }, function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background", initialBackground);
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(36, 36, 36)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a:hover').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", " rgb(58, 134, 233)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            });
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <ul class="navBar">
+        <li><a href="index.html">inicio</a></li>
+        <li><a href="lugares.html">lugares</a></li>
+        <li><a href="index.html#quienes-somos">quiénes somos</a></li>
+        <li><a href="contacto.html">contacto</a></li>
+    </ul>
+
+    <div class="lista1">
+        <p class="titulo"><a href="granada.html">GRANADA, ANDALUCIA</a></p>
+        <p class="desc">el último reino</p>
+        <img src="imagenes/granadaAlhambra.jpg" alt="playa" id="imgGRA1">
+        <img src="imagenes/granadaCallejon.jpg" alt="playa" id="imgGRA2">
+        <img src="imagenes/granadaVista.jpg" alt="playa" id="imgGRA3">
+        <br>
+        <p class="titulo"><a href="cabodegata.html">CABO DE GATA, ALMERIA</a></p>
+        <p class="desc">la costa en el principio del mundo</p>
+        <img src="https://miguel-gil.es/wp-content/uploads/2022/07/web_noc0881-hdr-scaled.jpg" alt="playa" id="imgCAB1">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/832c92113370393.602644172696c.jpg" alt="playa"
+            id="imgCAB2">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/1b83c0113370393.6026441726e27.jpg" alt="playa"
+            id="imgCAB3">
+        <br>
+        <p class="titulo"><a href="lanzarote.html">LANZAROTE, CANARIAS</a></p>
+        <p class="desc">fuego y hielo</p>
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/b1ba1f160800181.63bb03ef5cb1d.jpg" alt="playa"
+            id="imgLAN1">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/907263160800181.63bb03ef5e4eb.jpg" alt="playa"
+            id="imgLAN2">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/a9d775160803599.63bb102a27fdd.jpg" alt="playa"
+            id="imgLAN3">
+        <br>
+    </div>
+</body>
+
+</html>

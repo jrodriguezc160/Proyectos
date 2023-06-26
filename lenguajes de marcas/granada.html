@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Prueba local</title>
+    <link rel="stylesheet" href="estilos/styles.css">
+
+    <style>
+        body {
+            font-size: small;
+        }
+
+        section {
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            scroll-snap-align: start;
+        }
+
+        #inicio {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            height: 100vh;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        button {
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, rgb(35, 166, 213), #23d5ab);
+            border: 0px solid blue;
+            border-radius: 20px;
+            transition: box-shadow 0.5s ease;
+        }
+
+        button:hover {
+            box-shadow: 0px 0px 15px 5px rgba(35, 166, 213, 0.5);
+        }
+
+
+        .subtitulo-seccion {
+            font-size: medium;
+            margin-bottom: 2rem;
+        }
+
+        .descripcion-lugar {
+            font-size: medium;
+
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .titulo1 {
+            font-family: "rotulo";
+            font-size: 18vh;
+            font-weight: 500;
+        }
+
+        .desc {
+            color: rgb(199, 199, 199);
+            font-size: 70%;
+            font-weight: 50;
+        }
+
+        .desc img {
+            padding-left: 10px;
+        }
+
+        .lista1 {
+            bottom: 0;
+            position: absolute;
+            margin: 0;
+            padding: 20px 30px;
+            align-items: baseline;
+            font-size: 50px;
+        }
+
+        .lista1 p {
+            display: inline;
+            padding-right: 10px;
+        }
+
+        .lista1 img {
+            width: 50px;
+            height: 50px;
+            margin: 0;
+            padding-left: 0px;
+            object-fit: cover;
+            transition: width 0.2s ease-in-out;
+        }
+
+        .lista1 img:hover {
+            width: 100px;
+            height: 50px;
+            margin: 0;
+            padding-left: 0px;
+            object-fit: cover;
+            transition: width 0.2s ease-in-out;
+        }
+
+        table {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        td,
+        th {
+            border: 1px solid grey;
+            padding: 10px 20px;
+        }
+
+        .gradient {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        }
+
+        .gradient td,
+        th {
+            border: 1px solid whitesmoke;
+            color: whitesmoke;
+        }
+
+        .stars-column {
+            width: 100px;
+            text-align: center;
+        }
+
+        #clave1 {
+            position: relative;
+            width: 250px;
+            height: 450px;
+            margin: 50px;
+            padding: 25px;
+            text-align: center;
+            background-image: url(imagenes/granadaAlhambra.jpg);
+            background-size: cover;
+            background-position: center;
+            border: 1px solid lightgrey;
+            border-radius: 20px;
+            overflow: hidden;
+            /* Añade un overflow hidden para ocultar el pseudo-elemento en los bordes */
+        }
+
+        #clave1::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            z-index: 1;
+        }
+
+        #clave1 .texto {
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        #clave1 .imagen-pequena {
+            position: absolute;
+            bottom: 20px;
+            border-radius: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        #clave2 {
+            position: relative;
+            width: 250px;
+            height: 450px;
+            margin: 50px;
+            padding: 25px;
+            text-align: center;
+            background-image: url(imagenes/granadaCallejon.jpg);
+            background-size: cover;
+            background-position: center;
+            border: 1px solid lightgrey;
+            border-radius: 20px;
+            overflow: hidden;
+            /* Añade un overflow hidden para ocultar el pseudo-elemento en los bordes */
+        }
+
+        #clave2::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            z-index: 0;
+        }
+
+        #clave2 .texto {
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        #clave2 .imagen-pequena {
+            position: absolute;
+            bottom: 20px;
+            border-radius: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        #clave3 {
+            position: relative;
+            width: 250px;
+            height: 450px;
+            margin: 50px;
+            padding: 25px;
+            text-align: center;
+            background-image: url(imagenes/granadaVista.jpg);
+            background-size: cover;
+            background-position: center;
+            border: 1px solid lightgrey;
+            border-radius: 20px;
+            overflow: hidden;
+            /* Añade un overflow hidden para ocultar el pseudo-elemento en los bordes */
+        }
+
+        #clave3::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            z-index: 0;
+        }
+
+        #clave3 .texto {
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        #clave3 .imagen-pequena {
+            position: absolute;
+            bottom: 20px;
+            border-radius: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var initialBackground = $('body').css("background");
+
+            $('a').hover(function () {
+                $(this).animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(58, 134, 233)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            }, function () {
+                $(this).animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(36, 36, 36)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            });
+
+            $("#imgGRA1").hover(function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background-image", "url(imagenes/granadaAlhambra.jpg)");
+                    $(this).animate({ opacity: 1 }, 100);
+                    $(this).css("height", "100vh");
+                });
+                $('a, .titulo1').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(238, 243, 243)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            }, function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background", initialBackground);
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a, .titulo1').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(36, 36, 36)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            });
+
+            $("#imgGRA2").hover(function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background-image", "url(imagenes/granadaCallejon.jpg)");
+                    $(this).animate({ opacity: 1 }, 100);
+                    $(this).css("height", "100vh");
+                });
+                $('a, .titulo1').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(238, 243, 243)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            }, function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background", initialBackground);
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a, .titulo1').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(36, 36, 36)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            });
+
+            $("#imgGRA3").hover(function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background-image", "url(imagenes/granadaVista.jpg)");
+                    $(this).animate({ opacity: 1 }, 100);
+                    $(this).css("height", "100vh");
+                });
+                $('a, .titulo1').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(238, 243, 243)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            }, function () {
+                $('body').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("background", initialBackground);
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+                $('a, .titulo1').animate({ opacity: 0 }, 100, function () {
+                    $(this).css("color", "rgb(36, 36, 36)");
+                    $(this).animate({ opacity: 1 }, 100);
+                });
+            });
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <div class="navBar">
+    <ul class="navBar">
+        <li><a href="index.html">inicio</a></li>
+        <li><a href="lugares.html">lugares</a></li>
+        <li><a href="index.html#quienes-somos">quiénes somos</a></li>
+        <li><a href="contacto.html">contacto</a></li>
+    </ul>
+    </div>
+
+    <section id="inicio">
+        <div class=" div-container">
+            <div class="lista1">
+                <p class="titulo1">GRANADA</p>
+                <div class="separador"></div>
+                <img src="imagenes/granadaAlhambra.jpg" alt="playa" id="imgGRA1">
+                <img src="imagenes/granadaCallejon.jpg" alt="playa" id="imgGRA2">
+                <img src="imagenes/granadaVista.jpg" alt="playa" id="imgGRA3">
+            </div>
+        </div>
+    </section>
+
+    <section id="reseña">
+        <h2 class="titulo-seccion">RESEÑA</h2>
+        <div class="descripcion-lugar">
+            <p>Descubre la encantadora ciudad de Granada, en el corazón de España. Sumérgete en su rica historia y
+                cultura, maravíllate con la majestuosidad de la Alhambra y déjate cautivar por el encanto de sus calles
+                empedradas y sus coloridos barrios.</p>
+            <p>Granada te sorprenderá con sus tesoros arquitectónicos, como la Alhambra y el Generalife. Pasea por el
+                Albaicín, un barrio histórico lleno de laberintos de calles estrechas y casas moriscas. Y no olvides
+                disfrutar de las tapas gratuitas con cada bebida en los animados bares de la ciudad.</p>
+            <p>En Granada, podrás disfrutar de la fusión perfecta entre lo antiguo y lo moderno. Explora el Sacromonte,
+                famoso por sus cuevas flamencas y su ambiente bohemio. Y, por supuesto, no te pierdas la deliciosa
+                gastronomía granadina, con platos como el famoso "pescaíto frito" y el sabroso "plato alpujarreño".
+                ¡Granada te espera con los brazos abiertos!</p>
+        </div>
+        <br>
+    </section>
+
+    <section id="quienes-somos">
+        <h2 class="titulo-seccion">TABLA</h2>
+        <br>
+        <table>
+            <tbody>
+                <tr class="gradient">
+                    <th>Características</th>
+                    <td class="stars-column">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2 L15.09 8.65 L22 9.27 L17 13.14 L18.18 20 L12 17.77 L5.82 20 L7 13.14 L2 9.27 L8.91 8.65 Z"
+                                stroke="whitesmoke" fill="none" />
+                        </svg>
+                    </td>
+                    <td class="stars-column">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2 L15.09 8.65 L22 9.27 L17 13.14 L18.18 20 L12 17.77 L5.82 20 L7 13.14 L2 9.27 L8.91 8.65 Z"
+                                stroke="whitesmoke" fill="none" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2 L15.09 8.65 L22 9.27 L17 13.14 L18.18 20 L12 17.77 L5.82 20 L7 13.14 L2 9.27 L8.91 8.65 Z"
+                                stroke="whitesmoke" fill="none" />
+                        </svg>
+                    </td>
+                    <td class="stars-column">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2 L15.09 8.65 L22 9.27 L17 13.14 L18.18 20 L12 17.77 L5.82 20 L7 13.14 L2 9.27 L8.91 8.65 Z"
+                                stroke="whitesmoke" fill="none" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2 L15.09 8.65 L22 9.27 L17 13.14 L18.18 20 L12 17.77 L5.82 20 L7 13.14 L2 9.27 L8.91 8.65 Z"
+                                stroke="whitesmoke" fill="none" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2 L15.09 8.65 L22 9.27 L17 13.14 L18.18 20 L12 17.77 L5.82 20 L7 13.14 L2 9.27 L8.91 8.65 Z"
+                                stroke="whitesmoke" fill="none" />
+                        </svg>
+                    </td>
+                    <th>Detalles</th>
+                </tr>
+                <tr>
+                    <td>Playa</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>No tiene</td>
+                </tr>
+                <tr>
+                    <td>Hoteles</td>
+                    <td></td>
+                    <td bgcolor="lightgrey"></td>
+                    <td></td>
+                    <td>Recomendamos el hotel "El caballero": el mejor en relación calidad/precio</td>
+                </tr>
+                <tr>
+                    <td>Restauración</td>
+                    <td></td>
+                    <td bgcolor="lightgrey"></td>
+                    <td></td>
+                    <td>El mesón "El Ganador" sirve una carne a la parrilla de 10</td>
+                </tr>
+                <tr>
+                    <td>Monumentos</td>
+                    <td></td>
+                    <td></td>
+                    <td bgcolor="lightgrey"></td>
+                    <td>Siendo la joya la Alhambra, la ciudad cuenta con otras muchas obras históricas que visitar</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="lugares-clave">
+        <h2 class="titulo-seccion">LUGARES CLAVE</h2>
+        <div style="display: flex; justify-content: center;">
+            <div id="clave1">
+                <h2 class="texto">ALHAMBRA</h2>
+                <p class="texto">Este magnífico palacio y fortaleza es uno de los destinos más populares de
+                    Granada. Con una
+                    arquitectura impresionante y hermosos jardines, la Alhambra te transportará a la época medieval de
+                    la dinastía nazarí.</p>
+                <img src="imagenes/granadaAlhambra.jpg" alt="playa" width="200px" height="200px"
+                    class="imagen-pequena">
+            </div>
+            <div id="clave2">
+                <h2 class="texto">BARRIO DEL ALBAICÍN</h2>
+                <p class="texto">Este encantador barrio histórico es famoso por sus calles estrechas y empinadas, sus
+                    casas blancas y sus vistas panorámicas de la Alhambra y la ciudad. Explora sus laberínticas calles,
+                    visita sus plazas y descubre la auténtica atmósfera morisca.</p>
+                <img src="imagenes/granadaCallejon.jpg" alt="playa" width="200px" height="200px"
+                    class="imagen-pequena">
+            </div>
+            <div id="clave3">
+                <h2 class="texto">CATEDRAL DE GRANADA</h2>
+                <p class="texto">Situada en el corazón de la ciudad, la Catedral de Granada es una obra maestra del
+                    Renacimiento español. Su imponente fachada y su interior impresionante, incluyendo la Capilla Real
+                    donde se encuentran los restos de los Reyes Católicos, son visitas obligadas para los amantes de la
+                    historia y la arquitectura.</p>
+                <img src="imagenes/granadaVista.jpg" alt="playa" width="200px" height="200px"
+                    class="imagen-pequena">
+            </div>
+        </div>
+        <br>
+    </section>
+    <br><br><br><br><br><br>
+    <div style="display: flex; justify-content: center;">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/vlrW9ahxtwo?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <br><br><br>
+</body>
+
+</html>
