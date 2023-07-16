@@ -8,5 +8,7 @@ Para este proyecto me inspiré en diferentes tutoriales disponibles en YouTube d
 
 ### Imágenes
 ![cal1_AdobeExpress](https://github.com/jrodriguezc160/Proyectos/assets/131864274/05bfe9ea-d271-4eba-b7f5-3c67d79ba123)
+<br>
 ![cal2_AdobeExpress](https://github.com/jrodriguezc160/Proyectos/assets/131864274/789bf246-6814-4b7b-a40c-99de92acfa73)
+<br>
 ![cal3_AdobeExpress](https://github.com/jrodriguezc160/Proyectos/assets/131864274/3d31e861-3097-46f8-b995-e7df2c262cbd)
