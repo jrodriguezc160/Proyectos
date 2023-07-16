@@ -7,7 +7,8 @@ Esta calculadora permite realizar operaciones simples (sumar, restar, multiplica
 Para este proyecto me inspiré en diferentes tutoriales disponibles en YouTube de forma gratuita, modificando el código según mi criterio.
 
 ### Imágenes
-![](https://github.com/jrodriguezc160/Proyectos/blob/main/calculadora-js-externo/demo/cal1.gif)
 <p align="center">
   <img src="./demo/cal1.gif" width=80%>
+  <img src="./demo/cal2.gif" width=80%>
+  <img src="./demo/cal3.gif" width=80%>
 </p>
