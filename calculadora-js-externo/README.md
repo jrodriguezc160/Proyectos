@@ -8,9 +8,11 @@ Para este proyecto me inspiré en diferentes tutoriales disponibles en YouTube d
 
 ### Imágenes
 <p align="center">
+  <br>
   <img src="./demo/cal1.gif" width=80%>
   <br>
   <img src="./demo/cal2.gif" width=80%>
   <br>
   <img src="./demo/cal3.gif" width=80%>
+  <br>
 </p>
