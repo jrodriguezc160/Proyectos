@@ -9,10 +9,10 @@ Para este proyecto me inspiré en diferentes tutoriales disponibles en YouTube d
 ### Imágenes
 <p align="center">
   <br>
-  <img src="./demo/calculadora1.gif" width=80%>
+  <img src="./demo/calculadora1.gif" width=50%>
   <br>
-  <img src="./demo/calculadora2.gif" width=80%>
+  <img src="./demo/calculadora2.gif" width=50%>
   <br>
-  <img src="./demo/calculadora3.gif" width=80%>
+  <img src="./demo/calculadora3.gif" width=50%>
   <br>
 </p>
