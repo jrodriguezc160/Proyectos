@@ -6,4 +6,4 @@ Esta calculadora permite realizar operaciones simples (sumar, restar, multiplica
 <br>
 Para este proyecto me inspiré en diferentes tutoriales disponibles en YouTube de forma gratuita, modificando el código según mi criterio.
 <br><br>
-### Imágenes
+###Imágenes
