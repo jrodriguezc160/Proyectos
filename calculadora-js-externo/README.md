@@ -9,5 +9,5 @@ Para este proyecto me inspiré en diferentes tutoriales disponibles en YouTube d
 ### Imágenes
 ![](https://github.com/jrodriguezc160/Proyectos/blob/main/calculadora-js-externo/demo/cal1.gif)
 <p align="center">
-  <img src="./demo/cal1.gif" width=50%>
+  <img src="./demo/cal1.gif" width=80%>
 </p>
