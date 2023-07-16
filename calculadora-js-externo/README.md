@@ -1,6 +1,5 @@
 # Calculadora con JavaScript
 ### Calculadora básica desarrollada con JS para la Formación Dual en empresa del grado de Desarrollo de Aplicaciones Web
-<br>
 [Visita el proyecto aquí](https://codepen.io/jrodriguezc160/pen/JjeLrqV)
 <br>
 Este es mi primer proyecto con JavaScript, por lo que me decidí por algo sencillo pero eficaz a la hora de desarrollar mi conocimiento y destreza en este lenguaje.
